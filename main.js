@@ -412,10 +412,6 @@ window.addEventListener('load', function(){
             }
 
             arc = d3.arc();
-                // .innerRadius( 0 )
-                // .outerRadius( function( d ){
-                //     return d.size/2;
-                // } );
 
             g2 = svg.append( 'g' )
                 .attr( 'id', 'g2' );
@@ -552,7 +548,7 @@ window.addEventListener('load', function(){
 
         var paths, nb, n;
         ( function init(){
-            n = 1 + ~~( Math.random() * 5 );
+            n = 1 + ~~( Math.random() * 3 );
             nb = 5 + ~~( Math.random() * 50 );
             paths = svg.selectAll( 'path' )
                 .remove()
