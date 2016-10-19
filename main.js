@@ -23,9 +23,12 @@ window.addEventListener('load', function(){
     } );
 
     document.querySelector('#nav-logo').addEventListener( 'click', function(){
-        console.log( window.location );
-        // window.location = 'makio135.github.io'
-    } )
+        window.location = window.location.origin;
+    } );
+
+    document.querySelector('#nav-title').addEventListener( 'click', function(){
+        window.location = window.location.origin;
+    } );
 
     //////////////////////////////////////////
     // Captions
