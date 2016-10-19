@@ -76,7 +76,7 @@ window.addEventListener('load', function(){
     function maskTransition(){
         mask.transition()
             .delay( 5000 )
-            .duration( 500 )
+            .duration( 200 )
             .attrs( {
                 x: 230,
                 width: 0
@@ -603,6 +603,7 @@ window.addEventListener('load', function(){
                     count ++;
                     if( count === nb ){
                         paths.remove();
+
                         anim4();
                     }
                 } );
@@ -719,6 +720,7 @@ window.addEventListener('load', function(){
         function endStep(){
             bars.remove();
             g.remove();
+
             anim5( data );
         }
     }
