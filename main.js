@@ -22,7 +22,7 @@ window.addEventListener('load', function(){
             } );
     } );
 
-    logo.addEventListener( 'click', function(){
+    document.querySelector('#nav-logo').addEventListener( 'click', function(){
         console.log( window.location );
         // window.location = 'makio135.github.io'
     } )
