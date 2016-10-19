@@ -1009,7 +1009,7 @@ window.addEventListener('load', function(){
 
             pts = d3.range( 5 ).map( function( d ){
                 return angles.map( function ( a ){
-                    var rad = w > h ? h : w;
+                    var rad = w < h ? w : h;
                     rad = rad >> 1;
                     rad /= 5;
                     return {
