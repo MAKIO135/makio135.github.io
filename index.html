@@ -1,23 +1,27 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#050011">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="icon" sizes="192x192" href="high-res-icon.png">
 
-<div class="home">
+        <title>Makio135</title>
 
-  <h1 class="page-heading">Posts</h1>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i" rel="stylesheet">
+        <link href="main.css" rel="stylesheet">
+    </head>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <body>
+        <div id="render"></div>
+        <nav>
+            <div id="nav-logo"></div>
+            <div id="nav-title">Makio135</div>
+        </nav>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+        <script src="d3.v4.min.js"></script>
+        <script src="d3-selection-multi.v1.min.js"></script>
+        <script src="https://cdn.rawgit.com/riccardoscalco/textures/master/textures.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
