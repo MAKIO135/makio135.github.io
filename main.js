@@ -459,7 +459,6 @@ window.addEventListener('load', function(){
         } )();
 
         function step1(){
-            console.log( 'step1' );
             var count = 0;
 
             arcs1
@@ -885,7 +884,7 @@ window.addEventListener('load', function(){
 
                 data.push( {
                     innerRadius: 0,
-                    outerRadius: w,
+                    outerRadius: w > h ? w : h,
                     startAngle: a + Math.PI / 2,
                     endAngle: a + Math.PI / 2,
                     toAngle: a + Math.PI / 2 + angle,
@@ -1010,9 +1009,12 @@ window.addEventListener('load', function(){
 
             pts = d3.range( 5 ).map( function( d ){
                 return angles.map( function ( a ){
+                    var rad = w > h ? h : w;
+                    rad = rad >> 1;
+                    rad /= 5;
                     return {
-                        x: ~~( center.x + a.cos * ( d + 1 ) * 100 ),
-                        y: ~~( center.y + a.sin * ( d + 1 ) * 100 )
+                        x: ~~( center.x + a.cos * ( d + 1 ) * rad ),
+                        y: ~~( center.y + a.sin * ( d + 1 ) * rad )
                     };
                 } );
             } );
