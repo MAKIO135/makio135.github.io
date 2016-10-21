@@ -1,10 +1,16 @@
-body{
+* {
     margin: 0;
     padding: 0;
+}
+
+body{
     background: #050011;
     font-family: 'Raleway', sans-serif;
-    color: white;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+#top{
+    position: absolute;
 }
 
 nav{
@@ -19,8 +25,7 @@ nav > div{
 }
 
 #nav-title{
-    /*color: rgb( 251, 53, 80 );*/
-    color: white;
+    color: #FFF;
     font-weight: 300;
     font-size: 47px;
     line-height: 35px;
@@ -28,18 +33,10 @@ nav > div{
 
 #nav-logo > svg > path{
     stroke: none;
-    fill: white;
+    fill: #FFF;
 }
 
-#render{
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-#render > svg{
-    z-index: -1;
+#grid{
+    max-width: 1600px;
+    margin: auto;
 }

@@ -46,7 +46,7 @@ window.addEventListener('load', function(){
         ],
         count = 0;
 
-    var captionSVG = d3.select( 'body' )
+    var captionSVG = d3.select( '#top' )
         .append( 'svg' )
         .attrs( {
             width: 230,
