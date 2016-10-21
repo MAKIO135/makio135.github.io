@@ -1,18 +1,26 @@
-a{
-    text-decoration: none;
-    
-    header{
-        margin: 20px 2px;
-        padding: 10px;
-        border-bottom: solid 3px #FB3550;
+nav{
+    width: 100%;
+    height: 55px;
+    margin: 20px 20px 0;
+    z-index: 999;
 
-        h1{
-            text-decoration: none !important;
-            color: #FB3550;
-            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            text-align: left;
-            font-size: 20px;
-            font-weight: 800;
+    div{
+        display: inline;
+    }
+
+    #nav-title{
+        cursor: pointer;
+        color: #FFF;
+        font-weight: 300;
+        font-size: 47px;
+        line-height: 35px;
+    }
+
+    #nav-logo{
+        cursor: pointer;
+        svg > path{
+            stroke: none;
+            fill: #FFF;
         }
     }
 }

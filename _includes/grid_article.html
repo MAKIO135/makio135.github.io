@@ -1,8 +1,8 @@
-{% capture index %} 
+{% capture index %}
 {{ include.index | abs }}
 {% endcapture %}
 
-{% capture nPosts %} 
+{% capture nPosts %}
 {{ include.nPosts | abs }}
 {% endcapture %}
 
@@ -53,6 +53,7 @@
                 {% endif %}
             </h3>
         </div>
+        <div class="border"></div>
     </article>
 
 {% if type == 0 or type == 2 or lastArticle == true %}

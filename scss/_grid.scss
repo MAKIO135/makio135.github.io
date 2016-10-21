@@ -21,9 +21,16 @@ $small_color: #aa9;
 }
 
 #grid {
-    margin: 0 auto;
+    margin: 40px auto;
+    max-width: 1600px;
     display: flex;
     flex-flow: row wrap;
+
+    &:hover{
+        .content{
+            opacity: 0.8;
+        }
+    }
 
     .col {
         flex-grow: 1;
@@ -31,6 +38,7 @@ $small_color: #aa9;
         padding: $col_padding;
 
         article {
+            position: relative;
             height: $article_height;
 
             .content {
@@ -41,7 +49,7 @@ $small_color: #aa9;
                 height: 100%;
                 position: relative;
                 overflow: hidden;
-                background: darken($article_backgroundcolor, 80%);
+                background: darken($article_backgroundcolor, 10%);
                 @include transition(.5s);
 
                 .bg {
@@ -51,7 +59,7 @@ $small_color: #aa9;
                     // background-size: cover;
                     background-position: center center;
                     @include bg-margin(4px);
-                    @include transition(.2s);
+                    // @include transition(.2s);
                 }
 
                 .title {
@@ -59,7 +67,8 @@ $small_color: #aa9;
                     bottom: 150%;
                     left: 0;
                     padding: 20px;
-                    background: darken($article_backgroundcolor, 80%);
+                    background: $article_backgroundcolor;
+                    // background: darken($article_backgroundcolor, 80%);
                     color: $title_color;
                     vertical-align: baseline;
                     font-family: sans-serif;
@@ -67,12 +76,12 @@ $small_color: #aa9;
                     font-weight: bold;
                     text-transform: uppercase;
                     @include transition(.2s);
-                  
+
                     a{
                         color: $title_color;
                         text-decoration: none;
                     }
-                    
+
                     small{
                         font-weight: normal;
                         font-size: 12px;
@@ -83,13 +92,34 @@ $small_color: #aa9;
                 &:hover {
                     background: $article_backgroundcolor;
                     .bg{
-                        @include bg-margin(10px);
+                        // @include bg-margin(8px);
                     }
 
                     .title{
-                        background: $article_backgroundcolor;
+                        // background: $article_backgroundcolor;
                         bottom: 10%;
                     }
+                }
+            }
+
+            .border {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: solid 4px $article_backgroundcolor;
+                pointer-events: none;
+                @include transition(.2s);
+            }
+
+            &:hover {
+                .content{
+                    opacity: 1;
+                }
+
+                .border{
+                    border: solid 15px $article_backgroundcolor;
                 }
             }
         }
