@@ -1,15 +1,37 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post">
+    <h1 class="title">
+        {{ page.title }}
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+        {% assign nbCategories = page.categories.size | minus:1 %}
 
-  <div class="post-content" itemprop="articleBody">
+        {% comment %}
+        {% if nbCategories != 0 %}
+        <br><small>
+            {{ nbCategories }}
+        </small>
+        {% endif %}
+        {% endcomment %}
+
+        {% if nbCategories >= 0 %}
+            <br><small>
+            {% for c in (0..nbCategories) %}
+                {% if page.categories[c] == 'big' %}
+                    {% continue %}
+                {% endif %}
+
+                <a href="#">{{ page.categories[c] }}</a>
+                {% if c < nbCategories %}
+                    ,
+                {% endif %}
+            {% endfor %}
+            </small>
+        {% endif %}
+    </h1>
+
+    <hr>
+
     {{ content }}
-  </div>
-
 </article>

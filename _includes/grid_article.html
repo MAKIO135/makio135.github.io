@@ -1,0 +1,60 @@
+{% capture index %} 
+{{ include.index | abs }}
+{% endcapture %}
+
+{% capture nPosts %} 
+{{ include.nPosts | abs }}
+{% endcapture %}
+
+{% assign lastArticle  = false %}
+{% if index == nPosts %}
+{% assign lastArticle  = true %}
+{% endif %}
+
+
+{% assign type = include.type %}
+{% if lastArticle == true and type == 1 %}
+{% assign type = 0 %}
+{% endif %}
+
+{% if type == 0 or type == 1 %}
+<div class="col">
+{% endif %}
+
+    <article  {% if type == 0 %}class="big"{% endif %}>
+        <div class="content">
+            <a href="{{ site.posts[include.index].url }}"><div class="bg" style='background-image: url("/images/previews/{{ site.posts[include.index].image }}");'></div></a>
+            <h3 class="title">
+                <a href="{{ site.posts[include.index].url }}">{{ site.posts[include.index].title }}</a>
+
+                {% assign nbCategories = site.posts[include.index].categories.size | minus:1 %}
+
+                {% comment %}
+                {% if nbCategories != 0 %}
+                <br><small>
+                    {{ nbCategories }}
+                </small>
+                {% endif %}
+                {% endcomment %}
+
+                {% if nbCategories >= 0 %}
+                    <br><small>
+                    {% for c in (0..nbCategories) %}
+                        {% if site.posts[include.index].categories[c] == 'big' %}
+                            {% continue %}
+                        {% endif %}
+
+                        <a href="#">{{ site.posts[include.index].categories[c] }}</a>
+                        {% if c < nbCategories - 1 %}
+                            ,
+                        {% endif %}
+                    {% endfor %}
+                    </small>
+                {% endif %}
+            </h3>
+        </div>
+    </article>
+
+{% if type == 0 or type == 2 or lastArticle == true %}
+</div>
+{% endif %}
