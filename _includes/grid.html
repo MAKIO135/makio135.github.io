@@ -1,0 +1,20 @@
+<div id="grid">
+    {% capture nbPosts %}{{ include.collection.size | minus:1 }}{% endcapture %}
+    {% assign inColumn = false %}
+
+    {% for i in (0..nbPosts) %}
+        {% if inColumn == false %}
+            {% if include.collection[i].categories contains 'big' %}
+                {% include grid_article.html index=i type=0 nPosts=nbPosts %}
+            {% else %}
+                {% include grid_article.html index=i type=1 nPosts=nbPosts %}
+                {% assign inColumn = true %}
+            {% endif %}
+        {% else %}
+            {% include grid_article.html index=i type=2 nPosts=nbPosts %}
+            {% assign inColumn = false %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+<script src="/js/grid.js"></script>

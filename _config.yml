@@ -1,0 +1,23 @@
+title: "Makio135"
+tagline : "Learn. Code. Create."
+description: ""
+keywords: ['creative coding', 'data visualization', 'installation']
+
+# sns
+github: Makio135
+email: "lionel@makio135.com"
+twitter: Makio135
+
+url: http://makio135.github.io
+
+# build settings
+permalink: /:year/:month/:title/
+future: true
+encoding: utf-8
+
+exclude: [README.md, LICENSE, CNAME, start.bat]
+include: [.htaccess]
+show_drafts: false
+
+sass:
+  sass_dir: scss

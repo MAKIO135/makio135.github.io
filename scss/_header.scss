@@ -1,0 +1,26 @@
+nav{
+    width: 100%;
+    height: 55px;
+    margin: 20px 20px 0;
+    z-index: 999;
+
+    div{
+        display: inline;
+    }
+
+    #nav-title{
+        cursor: pointer;
+        color: #FFF;
+        font-weight: 300;
+        font-size: 47px;
+        line-height: 35px;
+    }
+
+    #nav-logo{
+        cursor: pointer;
+        svg > path{
+            stroke: none;
+            fill: #FFF;
+        }
+    }
+}

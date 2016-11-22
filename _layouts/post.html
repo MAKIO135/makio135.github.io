@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="post">
+    <h1 class="title">
+        {{ page.title }}
+
+        {% assign nbCategories = page.categories.size | minus:1 %}
+
+        {% comment %}
+        {% if nbCategories != 0 %}
+        <br><small>
+            {{ nbCategories }}
+        </small>
+        {% endif %}
+        {% endcomment %}
+
+        {% if nbCategories >= 0 %}
+            <br><small>
+            {% for c in (0..nbCategories) %}
+                {% if page.categories[c] == 'big' %}
+                    {% continue %}
+                {% endif %}
+
+                <a href="#">{{ page.categories[c] }}</a>
+                {% if c < nbCategories %}
+                    ,
+                {% endif %}
+            {% endfor %}
+            </small>
+        {% endif %}
+    </h1>
+
+    <hr>
+
+    {{ content }}
+</article>
