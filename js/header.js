@@ -72,6 +72,7 @@ window.addEventListener('load', function(){
             fill: '#FFF'
         } );
 
+
     var caption = captionSVG.append( 'text' )
         .attrs( {
             x: 0,
@@ -81,7 +82,39 @@ window.addEventListener('load', function(){
         } )
         .text( captions[ count ] );
 
+    var rect = captionSVG
+        .append( 'rect' )
+        .attrs( {
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 25,
+            fill: '#FFF'
+        } );
+
     function maskTransition(){
+        // rect.transition()
+        //     .delay( 5000 )
+        //     .duration( 200 )
+        //     .attr( 'width', 230)
+        //     .on( 'end', function(){
+        //         count++;
+        //         count = count % captions.length;
+        //         caption.text( captions[ count ] );
+        //
+        //         rect.transition()
+        //             .delay( 100 )
+        //             .duration( 200 )
+        //             .attrs( {
+        //                 x: 230,
+        //                 width: 0
+        //             } )
+        //             .on( 'end', function(){
+        //                 rect.attr( 'x', 0 );
+        //                 maskTransition();
+        //             } );
+        //     } );
+
         mask.transition()
             .delay( 5000 )
             .duration( 200 )

@@ -28,7 +28,13 @@ $small_color: #aa9;
 
     &:hover{
         .content{
-            opacity: 0.8;
+            // opacity: 0.8;
+            .title{
+                background: darken( $article_backgroundcolor, 50% );
+            }
+        }
+        .border{
+            border: solid 4px darken( $article_backgroundcolor, 50% );
         }
     }
 
@@ -56,15 +62,14 @@ $small_color: #aa9;
                     position: absolute;
                     top: 0;
                     left: 0;
-                    // background-size: cover;
                     background-position: center center;
-                    @include bg-margin(4px);
-                    // @include transition(.2s);
+                    @include bg-margin(0px);
                 }
 
                 .title {
                     position: absolute;
-                    bottom: 150%;
+                    // bottom: 150%;
+                    bottom: 5%;
                     left: 0;
                     padding: 20px;
                     background: $article_backgroundcolor;
@@ -88,18 +93,6 @@ $small_color: #aa9;
                         color: $small_color;
                     }
                 }
-
-                &:hover {
-                    background: $article_backgroundcolor;
-                    .bg{
-                        // @include bg-margin(8px);
-                    }
-
-                    .title{
-                        // background: $article_backgroundcolor;
-                        bottom: 10%;
-                    }
-                }
             }
 
             .border {
@@ -115,7 +108,16 @@ $small_color: #aa9;
 
             &:hover {
                 .content{
-                    opacity: 1;
+                    background: $article_backgroundcolor;
+                    .bg{
+                        // @include bg-margin(8px);
+                    }
+
+                    .title{
+                        // background: $article_backgroundcolor;
+                        // bottom: 10%;
+                        bottom: 25%;
+                    }
                 }
 
                 .border{

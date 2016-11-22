@@ -1,7 +1,7 @@
-leClub.github.io
+makio135.github.io
 ================
 
-Official websites for [Le Club](http://leclub.github.io)
+Official websites for [Makio135](//makio135.com)
 
 Written in Jekyll
 
@@ -12,5 +12,3 @@ Written in Jekyll
 * https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * https://jekyllrb.com/
 * https://github.com/Shopify/liquid/wiki
-
-[Check _boilerplates folder for quick templating](https://github.com/leClub/leClub.github.io/tree/master/_boilerplates)
