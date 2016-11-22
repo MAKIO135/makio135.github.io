@@ -1,5 +1,5 @@
 .post{
-    max-width: 1200px;
+    max-width: 1160px;
     margin: auto;
     margin-top: 40px;
     text-align: left;
@@ -21,6 +21,13 @@
         small{
             font-size: 12px;
             font-weight: 400;
+        }
+    }
+
+    p{
+        line-height: 22px;
+        a{
+            color: white;
         }
     }
 

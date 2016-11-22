@@ -62,6 +62,7 @@ $small_color: #aa9;
                     position: absolute;
                     top: 0;
                     left: 0;
+                    background-size: cover;
                     background-position: center center;
                     @include bg-margin(0px);
                 }
